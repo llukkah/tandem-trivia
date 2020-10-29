@@ -1,15 +1,26 @@
 import { render } from '@testing-library/react';
 import React, { Component } from 'react';
 import triviaData from '../triviaData.json'
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import ListGroup from 'react-bootstrap/ListGroup';
+import './Question.css'
 
 const triviaQ = triviaData.map((triviaQs) => {
     return(
         <>
-        <p>{triviaQs.question}</p>
-        <button>{triviaQs.incorrect[0]}</button>
-        <button>{triviaQs.incorrect[1]}</button>
-        <button>{triviaQs.incorrect[2]}</button>
-        <button>{triviaQs.correct}</button>
+        <Card className="outerCard">
+        <div className="cards">
+            <Card.Header><p>{triviaQs.question}</p></Card.Header>
+            <ListGroup as="ul" variant="dark">
+                <ListGroup.Item><Button>{triviaQs.incorrect[0]}</Button></ListGroup.Item>
+                <ListGroup.Item><Button>{triviaQs.incorrect[1]}</Button></ListGroup.Item>
+                <ListGroup.Item><Button>{triviaQs.incorrect[2]}</Button></ListGroup.Item>
+                <ListGroup.Item><Button>{triviaQs.correct}</Button></ListGroup.Item>
+            </ListGroup>
+            </div>
+        </Card>
+
         </>
     )
 })
@@ -17,17 +28,9 @@ const triviaQ = triviaData.map((triviaQs) => {
 export default class Questions extends Component {
     render() {
         return (
-            <div>{triviaQ}</div>
+            <>
+            {triviaQ}
+            </>
         )
     }
 }
-
-// react bootstrap:
-// <Card style={{ width: '18rem' }}>
-// //   <Card.Header>Featured</Card.Header>
-// //   <ListGroup variant="flush">
-// //     <ListGroup.Item>Cras justo odio</ListGroup.Item>
-// //     <ListGroup.Item>Dapibus ac facilisis in</ListGroup.Item>
-// //     <ListGroup.Item>Vestibulum at eros</ListGroup.Item>
-// //   </ListGroup>
-// // </Card>

@@ -1,0 +1,9 @@
+.cards {
+    border: 2px solid white;
+    /* background-color: white; */
+}
+
+.outerCard {
+    margin-bottom: 30px;
+    width: 18rem;
+}

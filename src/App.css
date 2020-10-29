@@ -1,13 +1,8 @@
 body {
   background-color: #43293A;  
 }
-.App {
-  text-align: center;
-}
-
 .App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  height: 20vmin;
 }
 
 .App-header {
@@ -16,8 +11,4 @@ body {
   justify-content: flex-start;
   font-size: calc(10px + 2vmin);
   color: #F8FC7A;
-}
-
-.App-link {
-  color: #61dafb;
 }

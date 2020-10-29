@@ -1,8 +1,8 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import TandemLogo from './Images/TandemLogo.png';
 import Home from './Components/Home.jsx'
 import Questions from './Components/Questions.jsx'
-
 
 function App() {
   return (

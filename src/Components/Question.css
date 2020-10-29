@@ -1,9 +1,28 @@
-.cards {
-    border: 2px solid white;
-    /* background-color: white; */
+p {
+    text-align: center;
 }
-
 .outerCard {
     margin-bottom: 30px;
     width: 18rem;
+    margin-left: 30px;
+    text-align: center;
+    border: 2px solid white;
+    background-color: #E1E2E4;
+    color: #903C5E;
+    border-radius: 5px;
+}
+ul {
+    list-style-type: none;
+}
+.card {
+    background-color: black;
+}
+.finalDiv {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+.button-style {
+    margin-top: 5px;
 }

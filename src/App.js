@@ -1,6 +1,8 @@
 import './App.css';
 import TandemLogo from './Images/TandemLogo.png';
-import Home from './Components/Home.js'
+import Home from './Components/Home.jsx'
+import Questions from './Components/Questions.jsx'
+
 
 function App() {
   return (
@@ -13,6 +15,7 @@ function App() {
       </header>
       <div>
         < Home />
+        < Questions/>
       </div>
     </div>
   );

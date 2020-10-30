@@ -1,9 +1,9 @@
 // import { render } from '@testing-library/react';
 import React, { Component } from 'react';
-// import triviaData from '../triviaData.json'
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import ListGroup from 'react-bootstrap/ListGroup';
+// // import triviaData from '../triviaData.json'
+// import Button from 'react-bootstrap/Button';
+// import Card from 'react-bootstrap/Card';
+// import ListGroup from 'react-bootstrap/ListGroup';
 import './Question.css'
 import {triviaData} from './triviaData'
 
@@ -48,12 +48,10 @@ export default class Questions extends Component {
             return {
                 questions: triviaData[currentQuestion].question,
                 options: triviaData[currentQuestion].incorrect,
-                // correctAnswer: triviaData[currentQuestion].correct,
                 answers: triviaData[currentQuestion].correct
             }
         })
     }
-
 
     componentDidMount() {
         this.loadQuiz();
@@ -72,42 +70,44 @@ export default class Questions extends Component {
             })
         }
     }
-//updates the component
-componentDidUpdate(prevProps, prevState){
-    const {currentQuestion} = this.state;
-    if(this.state.currentQuestion !== prevState.currentQuestion) {
-        this.setState(() => {
-            return {
-                disabled: true,
-                questions: triviaData[currentQuestion].question,
-                options: triviaData[currentQuestion].incorrect,
-                // correctAnswer: triviaData[currentQuestion].correct,
-                answers: triviaData[currentQuestion].correct
-            }
+
+    //updates the component
+    componentDidUpdate(prevProps, prevState){
+        const {currentQuestion} = this.state;
+        if(this.state.currentQuestion !== prevState.currentQuestion) {
+            this.setState(() => {
+                return {
+                    disabled: true,
+                    questions: triviaData[currentQuestion].question,
+                    options: triviaData[currentQuestion].incorrect,
+                    answers: triviaData[currentQuestion].correct
+                }
+            })
+        }
+    }
+
+    //check answer
+    checkAnswer = answer => {
+        this.setState({
+            userAnswer: answer,
+            disabled: false
         })
     }
-}
 
-//check answer
-checkAnswer = answer => {
-    this.setState({
-        userAnswer: answer,
-        disabled: false
-    })
-}
+    finishHandler = () => {
+        // if(this.state.currentQuestion === triviaData.length -1) {
+            if(this.state.currentQuestion === 10) {
+            this.setState({
+                quizEnd: true
+            })
+        }
+        if (this.state.userAnswer === this.state.answer) {
+            this.setState({
+              score: this.state.score + 1
+            });
+          }
+        }
 
-finishHandler = () => {
-    if(this.state.currentQuestion === triviaData.length -1) {
-        this.setState({
-            quizEnd: true
-        })
-    }
-    if (this.state.userAnswer === this.state.answer) {
-        this.setState({
-          score: this.state.score + 1
-        });
-      }
-}
     render() {
         const {questions, options, currentQuestion, correctAnswer, userAnswer, quizEnd} = this.state;
         if (quizEnd) {
@@ -135,7 +135,8 @@ finishHandler = () => {
             <div className="finalDiv">
                 <section className="outerCard">
                     <h3>{questions}</h3>
-                    <h5>{`Question ${currentQuestion} out of ${triviaData.length -1}`}</h5>
+                    {/* <h5>{`Question ${currentQuestion} out of ${triviaData.length -1}`}</h5> */}
+                    <h5>{`Question ${currentQuestion} out of 10`}</h5>
                 </section>
                 
                 {options.map(option => (
@@ -201,7 +202,8 @@ finishHandler = () => {
                 /////////////////////////////////////
                 ///////////////////////////////////// */}
                 
-                {currentQuestion < triviaData.length -1 && 
+                {/* {currentQuestion < triviaData.length -1 &&  */}
+                {currentQuestion < 10 && 
                     <button
                             disabled={this.setState.disabled}
                             onClick={this.nextQuestionHandler}>
@@ -209,7 +211,8 @@ finishHandler = () => {
                     </button>
                 }
 
-                {currentQuestion === triviaData.length -1 && 
+                {/* {currentQuestion === triviaData.length -1 &&  */}
+                {currentQuestion === 10 && 
                     <button
                             onClick={this.finishHandler}
                     >

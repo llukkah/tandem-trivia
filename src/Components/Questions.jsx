@@ -75,15 +75,23 @@ componentDidUpdate(prevProps, prevState){
     }
 }
     render() {
-        const {questions, options} = this.state;
+        const {questions, options, currentQuestion, userAnswer} = this.state;
         return (
             <div className="finalDiv">
-                <p>curly bracket Questions:</p>{questions}
+                <section className="outerCard">
+                    <h3>{questions}</h3>
+                    <h5>{`Question ${currentQuestion} out of ${triviaData.length}`}</h5>
+                </section>
                 {options.map(option => (
-                <p>
-                    <p>mapped options:</p>
+                <ul className="list-items">
+                    <p
+                    className= {`ui floating message
+                    ${userAnswer === option ? "selected" : null}
+                    
+                    `}>
                     {option}
                 </p>
+                </ul>
                 ))}
                 <button
                 onClick={this.nextQuestionHandler}>Next</button>
@@ -91,3 +99,13 @@ componentDidUpdate(prevProps, prevState){
         )
     }
 }
+
+//         <section className="outerCard">
+//             <p>{triviaQs.question}</p>
+//             <ul className="list-items">
+//                 <li><Button variant="outline-dark">{triviaQs.incorrect[0]}</Button></li>
+//                 <li><Button variant="outline-dark" className="button-style">{triviaQs.incorrect[1]}</Button></li>
+//                 <li><Button variant="outline-dark" className="button-style">{triviaQs.incorrect[2]}</Button></li>
+//                 <li><Button variant="outline-dark" className="button-style">{triviaQs.correct}</Button></li>
+//             </ul>
+//         </section>

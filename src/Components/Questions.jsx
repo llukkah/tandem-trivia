@@ -1,11 +1,11 @@
 // import { render } from '@testing-library/react';
 import React, { Component } from 'react';
-import triviaData from '../triviaData.json'
+// import triviaData from '../triviaData.json'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import ListGroup from 'react-bootstrap/ListGroup';
 import './Question.css'
-import {TriviaData} from './triviaData'
+import {triviaData} from './triviaData'
 
 // const triviaQ = triviaData.map((triviaQs) => {
 //     return(
@@ -43,12 +43,12 @@ export default class Questions extends Component {
     }
 
     loadQuiz = () => {
-        const{currentQuestion} = this.state;
+        const {currentQuestion} = this.state;
         this.setState(() => {
             return {
                 questions: triviaData[currentQuestion].question,
                 options: triviaData[currentQuestion].incorrect,
-                correctAnswer: triviaData[currentQuestion].correct,
+                // correctAnswer: triviaData[currentQuestion].correct,
                 answers: triviaData[currentQuestion].correct
             }
         })
@@ -81,7 +81,7 @@ componentDidUpdate(prevProps, prevState){
                 disabled: true,
                 questions: triviaData[currentQuestion].question,
                 options: triviaData[currentQuestion].incorrect,
-                correctAnswer: triviaData[currentQuestion].correct,
+                // correctAnswer: triviaData[currentQuestion].correct,
                 answers: triviaData[currentQuestion].correct
             }
         })
@@ -102,6 +102,11 @@ finishHandler = () => {
             quizEnd: true
         })
     }
+    if (this.state.userAnswer === this.state.answer) {
+        this.setState({
+          score: this.state.score + 1
+        });
+      }
 }
     render() {
         const {questions, options, currentQuestion, correctAnswer, userAnswer, quizEnd} = this.state;
@@ -114,9 +119,9 @@ finishHandler = () => {
                     <ul>
                         {triviaData.map((item, index) => (
                             <>
-                            <li className="ui floating message options"
+                            <li
                             key={index}>{item.question}</li>
-                            <li className="ui floating message options"
+                            <li
                             key={index}>{item.correct}</li>
                             </>
                         ))}
@@ -155,11 +160,40 @@ finishHandler = () => {
                 /////////////////////////////////////
                 /////////////////////////////////////
                 ///////////////////////////////////// */}
-                <button
+                {/* DISPLAYS ACORRECT ANSWER BUT WHEN CLICK DOESNT INCREMEMNT SCORE.
+                CHECK "USERANSWER INPUT" */}
+                {/* <button
                         variant="outline-light"
+                        className= "ui floating message options"
                         onClick={() => this.checkAnswer(userAnswer)}>
                     {correctAnswer}
-                </button>
+                </button> */}
+
+                {/* DOESNT DISPLAY ANYTHING... TOO MUCH TIME TO LOAD */}
+                {/* {triviaData.map(cAnswer => (
+                    <ul className="list-items">
+                        <button
+                                variant="outline-light"
+                                className= {`ui floating message options
+                                    ${userAnswer === cAnswer ? "selected" : null}
+                                    `}
+                                onClick={() => this.checkAnswer(cAnswer)}
+                        >
+                            {cAnswer}
+                        </button>
+                    </ul>
+                ))} */}
+
+                {/* DISPLAYS ALL CORRECT ANSWERS */}
+                {/* {triviaData.map((item, index) => (
+                            <button 
+                                className="ui floating message options"
+                                key={index}
+                                onClick={() => this.checkAnswer(userAnswer)}
+                            >
+                                {item.correct}
+                            </button>
+                        ))} */}
                 {/* /////////////////////////////////////
                 /////////////////////////////////////
                 /////////////////////////////////////

@@ -27,5 +27,11 @@ ul {
 }
 
 .selected {
-    background: linear-gradient(to right #F8FC7A )
+    background: linear-gradient(to right, #F8FC7A, #eac0e4) !important
+}
+
+.options {
+    padding: 8px;
+    border: 2px solid #000;
+    cursor: pointer;
 }

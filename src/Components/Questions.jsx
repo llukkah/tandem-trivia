@@ -36,7 +36,10 @@ export default class Questions extends Component {
     state = {
         userAnswer: null,
         currentQuestion: 0,
-        options: []
+        options: [],
+        quizEnd: false,
+        score: 0,
+        disabled: true
     }
 
     loadQuiz = () => {
@@ -74,27 +77,61 @@ componentDidUpdate(prevProps, prevState){
         })
     }
 }
+
+//check answer
+checkAnswer = answer => {
+    this.setState({
+        userAnswer: answer
+    })
+}
+
+finishHandler = () => {
+    if(this.state.currentQuestion === triviaData.length -1) {
+        this.setState({
+            quizEnd: true
+        })
+    }
+}
     render() {
-        const {questions, options, currentQuestion, userAnswer} = this.state;
+        const {questions, options, currentQuestion, userAnswer, quizEnd} = this.state;
+        if (quizEnd) {
+            return (
+                <div>
+                    <h2> Game Over.</h2>
+                </div>
+            )
+        }
+
         return (
             <div className="finalDiv">
                 <section className="outerCard">
                     <h3>{questions}</h3>
-                    <h5>{`Question ${currentQuestion} out of ${triviaData.length}`}</h5>
+                    <h5>{`Question ${currentQuestion} out of ${triviaData.length -1}`}</h5>
                 </section>
                 {options.map(option => (
                 <ul className="list-items">
-                    <p
-                    className= {`ui floating message
+                    <button
+                    variant="outline-light"
+                    className= {`ui floating message options
                     ${userAnswer === option ? "selected" : null}
-                    
-                    `}>
+                    `}
+                    onClick={() => this.checkAnswer(option)}
+                    >
                     {option}
-                </p>
+                </button>
                 </ul>
                 ))}
+                {currentQuestion < triviaData.length -1 && 
+
+
+
                 <button
                 onClick={this.nextQuestionHandler}>Next</button>
+                }
+                {currentQuestion === triviaData.length -1 && 
+                <button
+                onClick={this.finishHandler}
+                > Finish</button>}
             </div>
         )
     }

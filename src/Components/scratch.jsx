@@ -17,20 +17,20 @@ export default class Questions extends Component {
         disabled: true
     }
 
-    loadQuiz = () => {
+    loadQuiz = (randomizedTriviaArr) => {
         const {currentQuestion} = this.state;
         this.setState(() => {
             return {
-                questions: triviaData[currentQuestion].question,
-                // questions: '',
-                options: triviaData[currentQuestion].incorrect,
-                answers: triviaData[currentQuestion].correct
+                // questions: triviaData[currentQuestion].question,
+                // // questions: '',
+                // options: triviaData[currentQuestion].incorrect,
+                // answers: triviaData[currentQuestion].correct
 
                 // questions: randomizedTriviaArr[currentQuestion].question,
                 // options: randomizedTriviaArr[currentQuestion].incorrect,
                 // answers: randomizedTriviaArr[currentQuestion].correct
 
-                // questions: randomizedTriviaArr[currentQuestion],
+                questions: randomizedTriviaArr[currentQuestion],
                 // options: this.getAnswers(triviaData),
                 // options: randomizedTriviaArr[currentQuestion].incorrect,
                 // answers: randomizedTriviaArr[currentQuestion].correct
@@ -42,9 +42,8 @@ export default class Questions extends Component {
     }
 
     componentDidMount() {
-        // let randomQuestions = this.shuffle(triviaData);
-        // this.loadQuiz(randomQuestions);
-        this.loadQuiz()
+        let randomQuestions = this.shuffle(triviaData);
+        this.loadQuiz(randomQuestions);
         // let answersToRandQ = this.getAnswers(triviaData)
     }
 
@@ -59,17 +58,6 @@ export default class Questions extends Component {
                 score: score + 1
             })
         }
-        this.correctAnswer()
-    }
-
-    correctAnswer = answer => {
-        if(this.state.userAnswer !== answer) {
-            alert(`The Correct Answer is ${this.state.answers}`)  
-         } else if(this.state.UserAnswer === answer) {
-             alert('Correct!')
-            }
-
-    
     }
 
     //updates the component
@@ -93,19 +81,13 @@ export default class Questions extends Component {
             userAnswer: answer,
             disabled: false
         })
-
-        // if(this.state.userAnswer !== answer) {
-        //     alert(`The Correct Answer is ${this.state.answers}`)
-        // }
     }
-
 
     finishHandler = () => {
         // if(this.state.currentQuestion === triviaData.length -1) {
             if(this.state.currentQuestion === 10) {
             this.setState({
-                quizEnd: true,
-                score: this.state.score + 1
+                quizEnd: true
             })
         }
         if (this.state.userAnswer === this.state.answer) {
@@ -116,9 +98,45 @@ export default class Questions extends Component {
         }
 
 
+            shuffle = (triviaData) => {
+                // let triviaDataArr = []
+                // let triviaDataArr = [triviaData]
+                // const triviaDataMap = new Map(triviaData)
+                // const QAndA = Object.fromEntries(triviaDataMap)
+                // console.log(QAndA); // { foo: "bar", baz: 42 }
+
+                let triviaDataArr = triviaData.map(q => q.question)
+                let triviaAnsArr = triviaData.map(q => q.incorrect)
+                let triviaCorArr = triviaData.map(q => q.correct)
+                console.log(triviaAnsArr)//empty array
+
+
+                let randomizedTriviaArr = []; //gets popuated by loop
+                while (triviaDataArr.length > 0) {
+                  let randomIndex = Math.floor(Math.random() * triviaDataArr.length); //create random number
+                  randomizedTriviaArr.push(triviaDataArr[randomIndex]); //add choice randomly to arr
+                  triviaDataArr.splice(randomIndex, 1); //cut out a piece of the array then resart loop
+                }
+                //when loop has finished, return random array
+                // console.log(randomizedTriviaArr)
+                return randomizedTriviaArr;
+
+
+              }
+
+        getAnswers = (triviaData) => {
+            console.log(this.state.question)
+            if (this.state.question === triviaData.question) {
+                return triviaData.incorrect
+            }
+
+
+        }
+
+
     render() {
         const {questions, options, currentQuestion, correctAnswer, userAnswer, quizEnd} = this.state;
-        // const randomizedAnswers = this.shuffle(triviaData)
+        const randomizedAnswers = this.shuffle(triviaData)
         // console.log(randomizedAnswers) // returns randomized questions with answers
         if (quizEnd) {
             return (
@@ -174,9 +192,6 @@ export default class Questions extends Component {
                 ))}
 
                 {currentQuestion < 10 && 
-                        // if(this.state.userAnswer !== answer) {
-                        //     alert(`The Correct Answer is ${this.state.answers}`)
-                        // }
                     <button
                             disabled={this.setState.disabled}
                             onClick={this.nextQuestionHandler}>

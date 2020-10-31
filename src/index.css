@@ -11,3 +11,8 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+@font-face {
+  font-family: 'Stereofidelic';
+  src: local('Stereofidelic'), url(Fonts/stereofidelic.ttf) format('truetype');
+}

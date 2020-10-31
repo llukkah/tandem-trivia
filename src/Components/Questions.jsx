@@ -135,11 +135,13 @@ export default class Questions extends Component {
                         >
                             {option}
                         </button>
+                        
                     </ul>
                 ))}
 
                 {currentQuestion < 10 && 
                     <button
+                            className="submit-button"
                             disabled={this.setState.disabled}
                             onClick={this.nextQuestionHandler}>
                         Submit Answer

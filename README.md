@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+![Tandem Trivia Logo](./Wireframes/Logo.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Description
+Take a break from your work day and test your knowledge on some trivia.
 
-## Available Scripts
+This trivia game is made for the [Tandem 2020 Software Engineering Apprenticeship](https://madeintandem.com/about/apprenticeship-program/).
 
-In the project directory, you can run:
+#### Getting Started
+This app created with [Create React App](https://github.com/facebook/create-react-app).
 
-### `yarn start`
+Steps to run code:
+Clone down the repo.    
+Run npm i in command line to install dependencies.    
+Then run npm run start to launch React App to localhost:3000.     
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### How To Play:   
+Each question will be displayed 1 at a time.   
+The game is 10 questions.   
+The correct answer will be revealed after the answer is submitted.   
+At the end of the game, you will see your total score.   
+No question will repeat.    
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+#### Wireframes
+Desktop, Tablet and Mobile Wireframe:   
+![Tandem Trivia Home Screen](./Wireframes/Home.png) 
 
-### `yarn test`
+#### Color Theme    
+![Color Theme](./Wireframes/ColorTheme.png) 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### Fonts Used
+[Stereofidelic](https://www.dafont.com/stereofidelic.font)
+Menlo, Sans Serif.
 
-### `yarn build`
+#### MVP
+Minimum need to have features of the app:
+ * [x] Logo
+ * [x] Game Rules
+ * [x] Display 1 question at a time.
+ * [x] 10 questions per game.
+ * [x] Only select 1 answer out of given options.
+ * [x] Reveal correct answer after user submits their chosen answer.
+ * [x] User sees score they received at the end of the game.
+ * [x] No question will repeat within a game.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### POST MVP
+New features that would be added to make the app more awesome includes but not limited to:
+* Shuffle function to questions.
+* Add difficulty option for each game.
+* Add True or False questions.    

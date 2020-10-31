@@ -48,7 +48,7 @@ export default class Questions extends Component {
 
     correctAnswer = answer => {
         if(this.state.userAnswer !== this.state.answers) {
-            alert(`The Correct Answer is ${this.state.answers}`)  
+            alert(`Wrong! The Correct Answer is ${this.state.answers}`)  
          } else if(this.state.UserAnswer === answer) {
              alert('Correct!')
             }

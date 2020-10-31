@@ -1,3 +1,22 @@
 .About {
-    margin-top: 100px;
+    margin-top: 50px;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+}
+h3 {
+    color: #A1BC7D;
+    text-align: center;
+}
+li {
+    list-style-type: none;
+    color: #EAC0E4;
+}
+ul {
+    color: #EAC0E4;
+    font-weight: 700;
+}
+.how-to-play {
+    border: 2px solid #FFF;
+    margin-top: 30px;
 }

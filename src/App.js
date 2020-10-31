@@ -3,6 +3,7 @@ import './App.css';
 import TandemLogo from './Images/TandemLogo.png';
 import Home from './Components/Home.jsx'
 import Questions from './Components/Questions.jsx'
+import Footer from './Components/Footer.jsx'
 import { Route } from "react-router-dom";
 import { Link } from "react-router-dom";
 
@@ -10,14 +11,16 @@ function App() {
   return (
     <div>
       <header className="App-header">
-        <img src={TandemLogo} alt="logo" />
+        <Link to="/" className="logo">
+          <img src={TandemLogo} alt="logo" />
+        </Link>
         <div className="tandem-trivia">
-          <p className="tandem">
-            TANDEM
-          </p>
-          <p className="trivia">
-            TRIVIA
-          </p>
+            <p className="tandem">
+              TANDEM
+            </p>
+            <p className="trivia">
+              TRIVIA
+            </p>
         </div>
       </header>
       
@@ -42,6 +45,7 @@ function App() {
     
     <Route exact path="/home" component={Home} />
     <Route exact path="/question" component={Questions} />
+    <Footer />
     </div>
   );
 }

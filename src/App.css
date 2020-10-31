@@ -41,3 +41,17 @@ img {
 .start-link {
   margin-left: 100px;
 }
+
+a {
+  text-decoration: none;
+  color: #6CC1C8;
+}
+
+.about-link, .start-link {
+  letter-spacing: 3px;
+}
+
+a:hover {
+  color: #A1BC7D;
+  text-decoration: none;
+}

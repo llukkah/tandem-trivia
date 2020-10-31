@@ -3,8 +3,8 @@ p {
 }
 .outerCard {
     margin-bottom: 30px;
-    width: 18rem;
-    margin-left: 30px;
+    width: 20rem;
+    /* margin-left: 30px; */
     text-align: center;  
     background-color: #E1E2E4;
     color: #903C5E;
@@ -17,10 +17,7 @@ ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    align-content: center;
-}
-.card {
-    background-color: black;
+    /* align-content: space-between; */
 }
 .finalDiv {
     display: flex;
@@ -31,17 +28,36 @@ ul {
 .button-style {
     margin-top: 5px;
 }
-
-.selected {
-    background: linear-gradient(to right, #F8FC7A, #eac0e4) !important
+.question {
+    color: #070706;
+}
+.score {
+    font-weight: 700;
+}
+.button-options {
+    width: 200px;
+    margin-bottom: 20px;
+}
+button:focus{
+    background:linear-gradient(to right, #F8FC7A, #eac0e4)
 }
 
-.options {
-    padding: 8px;
-    border: 2px solid #000;
-    cursor: pointer;
+.submit-button,
+.finish-button {
+    width: 18rem;
+    margin-top: 30px;
+}
+
+.buttons {
+    margin: 0 auto;
 }
 
 .submit-button {
-    width: 18rem;
+    margin: 0 auto;
+    width: 250px;
+    margin-bottom: 20px;
+}
+
+.finish-button {
+    margin-bottom: 20px;
 }

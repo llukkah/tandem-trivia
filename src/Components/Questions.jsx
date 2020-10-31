@@ -104,13 +104,16 @@ export default class Questions extends Component {
                         {triviaData.slice(1, 11).map((item, index) => (
                             <>
                             <li
-                            key={index}>{item.question}</li>
+                                key={index}>
+                                {item.question}
+                            </li>
                             <li
-                            key={index}>{item.correct}</li>
+                                key={index}>
+                                {item.correct}
+                            </li>
                             </>
                         ))}
-                    </ul>
-                    
+                    </ul> 
                 </div>
             )
         }
@@ -119,41 +122,36 @@ export default class Questions extends Component {
             <>
             <div className="finalDiv">
                 <section className="outerCard">
-                    <p>Score: {this.state.score}</p>
-                    <h3>{questions}</h3>
-                    <h5>{`Question ${currentQuestion} out of 10`}</h5>
-                </section>
-                
-                {options.map(option => (
-                    <ul className="list-items">
-                        <button
-                                variant="outline-light"
-                                className= {`ui floating message options
-                                    ${userAnswer === option ? "selected" : null}
-                                    `}
+                    <p className="score">Score: {this.state.score}</p>
+                    <p className="score">{`Question ${currentQuestion} out of 10`}</p>
+                    <h3 className="question">{questions}</h3>
+                <section className="buttons">
+                    {options.map(option => (
+                            <button
+                                className="button-options"
                                 onClick={() => this.checkAnswer(option)}
-                        >
-                            {option}
+                            >
+                                {option}
+                            </button>
+                    ))}
+                    {currentQuestion < 10 && 
+                        <button
+                                className="submit-button"
+                                disabled={this.setState.disabled}
+                                onClick={this.nextQuestionHandler}>
+                            Submit Answer
                         </button>
-                        
-                    </ul>
-                ))}
+                    }
 
-                {currentQuestion < 10 && 
-                    <button
-                            className="submit-button"
-                            disabled={this.setState.disabled}
-                            onClick={this.nextQuestionHandler}>
-                        Submit Answer
-                    </button>
-                }
-
-                {currentQuestion === 10 && 
-                    <button
-                            onClick={this.finishHandler}
-                    >
-                        Finish
-                    </button>}
+                    {currentQuestion === 10 && 
+                        <button
+                                className="finish-button"
+                                onClick={this.finishHandler}
+                        >
+                            Finish
+                        </button>}
+                        </section>
+                </section>
             </div>
             </>
         )

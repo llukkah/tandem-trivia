@@ -97,23 +97,25 @@ export default class Questions extends Component {
         if (quizEnd) {
             return (
                 <div>
-                    <h2> Game Over.</h2>
-                    <h2>Your score is {this.state.score} points</h2>
-                    <p>The correct answers are:</p>
-                    <ul>
+                    <h2 className="game-over-header">Game Over.</h2>
+                    <h2 className="game-over-header">Your score is <span className="score-points">{this.state.score}</span> points</h2>
+                    <h2 className="game-over-header">The correct answers are:</h2>
+                    <div className="qAndA">
                         {triviaData.slice(1, 11).map((item, index) => (
-                            <>
-                            <li
+                            <p className="qAndADiv">
+                            <span
                                 key={index}>
-                                {item.question}
-                            </li>
-                            <li
-                                key={index}>
-                                {item.correct}
-                            </li>
-                            </>
+                                Q: {item.question}
+                            </span>
+                            <p
+                                key={index}
+                                className="answer">
+                                A: {item.correct}
+                            </p>
+                            </p>
+                            
                         ))}
-                    </ul> 
+                    </div> 
                 </div>
             )
         }

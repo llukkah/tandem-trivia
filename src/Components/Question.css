@@ -17,7 +17,6 @@ ul {
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    /* align-content: space-between; */
 }
 .finalDiv {
     display: flex;
@@ -41,13 +40,11 @@ ul {
 button:focus{
     background:linear-gradient(to right, #F8FC7A, #eac0e4)
 }
-
 .submit-button,
 .finish-button {
     width: 18rem;
     margin-top: 30px;
 }
-
 .buttons {
     margin: 0 auto;
 }
@@ -57,7 +54,41 @@ button:focus{
     width: 250px;
     margin-bottom: 20px;
 }
-
 .finish-button {
     margin-bottom: 20px;
+}
+.game-over-header {
+    text-align: center;
+    margin-top: 20px;
+    color: #C14976;
+}
+/* .QandA {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    /* align-content: center; */
+/* } */
+.score-points {
+    color: #F8FC7A;
+}
+.qAndADiv {
+    /* display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; */
+    border: 2px solid #F8FC7A;
+    font-size: 20px;
+    width: 200px;
+    margin: 30px;
+}
+span {
+    color: #EAC0E4;
+}
+.qAndA {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.answer {
+    color: #6CC1C8;
 }

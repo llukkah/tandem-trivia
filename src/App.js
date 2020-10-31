@@ -15,7 +15,7 @@ function App() {
       </header>
       <div>
         < Home />
-        < Questions/>
+        < Questions shuffle={true}/>
       </div>
     </div>
   );

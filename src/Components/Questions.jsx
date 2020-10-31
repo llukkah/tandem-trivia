@@ -22,30 +22,14 @@ export default class Questions extends Component {
         this.setState(() => {
             return {
                 questions: triviaData[currentQuestion].question,
-                // questions: '',
                 options: triviaData[currentQuestion].incorrect,
                 answers: triviaData[currentQuestion].correct
-
-                // questions: randomizedTriviaArr[currentQuestion].question,
-                // options: randomizedTriviaArr[currentQuestion].incorrect,
-                // answers: randomizedTriviaArr[currentQuestion].correct
-
-                // questions: randomizedTriviaArr[currentQuestion],
-                // options: this.getAnswers(triviaData),
-                // options: randomizedTriviaArr[currentQuestion].incorrect,
-                // answers: randomizedTriviaArr[currentQuestion].correct
-
-
-                
             }
         })
     }
 
     componentDidMount() {
-        // let randomQuestions = this.shuffle(triviaData);
-        // this.loadQuiz(randomQuestions);
         this.loadQuiz()
-        // let answersToRandQ = this.getAnswers(triviaData)
     }
 
     nextQuestionHandler = () => {
@@ -63,13 +47,11 @@ export default class Questions extends Component {
     }
 
     correctAnswer = answer => {
-        if(this.state.userAnswer !== answer) {
+        if(this.state.userAnswer !== this.state.answers) {
             alert(`The Correct Answer is ${this.state.answers}`)  
          } else if(this.state.UserAnswer === answer) {
              alert('Correct!')
             }
-
-    
     }
 
     //updates the component
@@ -93,15 +75,9 @@ export default class Questions extends Component {
             userAnswer: answer,
             disabled: false
         })
-
-        // if(this.state.userAnswer !== answer) {
-        //     alert(`The Correct Answer is ${this.state.answers}`)
-        // }
     }
 
-
     finishHandler = () => {
-        // if(this.state.currentQuestion === triviaData.length -1) {
             if(this.state.currentQuestion === 10) {
             this.setState({
                 quizEnd: true,
@@ -118,8 +94,6 @@ export default class Questions extends Component {
 
     render() {
         const {questions, options, currentQuestion, correctAnswer, userAnswer, quizEnd} = this.state;
-        // const randomizedAnswers = this.shuffle(triviaData)
-        // console.log(randomizedAnswers) // returns randomized questions with answers
         if (quizEnd) {
             return (
                 <div>
@@ -127,7 +101,7 @@ export default class Questions extends Component {
                     <h2>Your score is {this.state.score} points</h2>
                     <p>The correct answers are:</p>
                     <ul>
-                        {triviaData.map((item, index) => (
+                        {triviaData.slice(1, 11).map((item, index) => (
                             <>
                             <li
                             key={index}>{item.question}</li>
@@ -136,22 +110,13 @@ export default class Questions extends Component {
                             </>
                         ))}
                     </ul>
-                    {}
+                    
                 </div>
             )
         }
 
         return (
             <>
-            {/* {randomizedAnswers.map((question) => (
-                  <div>{question} </div>
-                ))} */}
-{/* 
-            {randomizedAnswers.map((item, index) => (
-                  <div key={index}>{item.question} </div>
-                ))} */}
-
-
             <div className="finalDiv">
                 <section className="outerCard">
                     <p>Score: {this.state.score}</p>
@@ -174,9 +139,6 @@ export default class Questions extends Component {
                 ))}
 
                 {currentQuestion < 10 && 
-                        // if(this.state.userAnswer !== answer) {
-                        //     alert(`The Correct Answer is ${this.state.answers}`)
-                        // }
                     <button
                             disabled={this.setState.disabled}
                             onClick={this.nextQuestionHandler}>
@@ -184,7 +146,6 @@ export default class Questions extends Component {
                     </button>
                 }
 
-                {/* //BUTTON FOR FINAL Question */}
                 {currentQuestion === 10 && 
                     <button
                             onClick={this.finishHandler}

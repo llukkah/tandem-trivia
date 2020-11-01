@@ -10,8 +10,8 @@ This app created with [Create React App](https://github.com/facebook/create-reac
 
 Steps to run code:     
 Clone down the repo.    
-Run npm i in command line to install dependencies.    
-Then run npm run start to launch React App to localhost:3000.     
+Run <code>npm i</code> in command line to install dependencies.    
+Then run <code>npm run start</code> to launch React App to localhost:3000.     
 
 ### How To Play:   
 Each question will be displayed 1 at a time.   

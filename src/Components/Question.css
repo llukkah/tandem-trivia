@@ -4,7 +4,6 @@ p {
 .outerCard {
     margin-bottom: 30px;
     width: 20rem;
-    /* margin-left: 30px; */
     text-align: center;  
     background-color: #E1E2E4;
     color: #903C5E;
@@ -29,6 +28,8 @@ ul {
 }
 .question {
     color: #070706;
+    margin-top: 25px;
+    margin-bottom: 50px;
 }
 .score {
     font-weight: 700;
@@ -44,11 +45,11 @@ button:focus{
 .finish-button {
     width: 18rem;
     margin-top: 30px;
+    background-color: #6CC1C8;
 }
 .buttons {
     margin: 0 auto;
 }
-
 .submit-button {
     margin: 0 auto;
     width: 250px;
@@ -62,19 +63,10 @@ button:focus{
     margin-top: 20px;
     color: #C14976;
 }
-/* .QandA {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; */
-    /* align-content: center; */
-/* } */
 .score-points {
     color: #F8FC7A;
 }
 .qAndADiv {
-    /* display: flex;
-    flex-direction: row;
-    flex-wrap: wrap; */
     border: 2px solid #F8FC7A;
     font-size: 20px;
     width: 200px;

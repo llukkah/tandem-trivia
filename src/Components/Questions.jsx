@@ -1,9 +1,5 @@
 // import { render } from '@testing-library/react';
 import React, { Component } from 'react';
-// // import triviaData from '../triviaData.json'
-// import Button from 'react-bootstrap/Button';
-// import Card from 'react-bootstrap/Card';
-// import ListGroup from 'react-bootstrap/ListGroup';
 import './Question.css'
 import {triviaData} from './triviaData'
 

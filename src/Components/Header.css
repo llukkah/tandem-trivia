@@ -1,0 +1,26 @@
+img {
+    height: 200px;
+    width: 200px;
+  }
+  .App-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: #F8FC7A;
+  }
+  .tandem {
+    margin-bottom: 0;
+    font-family: 'stereofidelic', sans-serif;
+    letter-spacing: 2px;
+    font-size: 60px;
+  }
+  .trivia {
+    margin-top: 0;
+    font-family: 'stereofidelic', sans-serif;
+    letter-spacing: 6px;
+    font-size: 60px;
+  }
+  .tandem-trivia {
+    margin-top: 20px;
+  }

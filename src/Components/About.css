@@ -1,0 +1,17 @@
+.About {
+    margin-top: 50px;
+    text-align: center;
+    width: 400px;
+    margin: 0 auto;
+}
+.rules,
+.how-to-play-header {
+    color: #EAC0E4;
+}
+.how-to-play-header {
+    font-weight: 700;
+}
+.how-to-play {
+    border: 2px solid #FFF;
+    margin-top: 30px;
+}

@@ -9,7 +9,8 @@ This trivia game is made for the [Tandem 2020 Software Engineering Apprenticeshi
 This app created with [Create React App](https://github.com/facebook/create-react-app).
 
 Steps to run code:     
-Clone down the repo.    
+Clone down the repo.     
+<code>cd</code> into the directory folder.    
 Run <code>npm i</code> in command line to install dependencies.    
 Then run <code>npm run start</code> to launch React App to localhost:3000.     
 

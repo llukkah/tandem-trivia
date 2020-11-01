@@ -22,7 +22,9 @@ No question will repeat.
 
 ### Wireframes
 Desktop, Tablet and Mobile Wireframe:   
-![Tandem Trivia Home Screen](./Wireframes/Home.png) 
+![Tandem Trivia Home Screen](./Wireframes/Home.png)        
+
+Detailed Wireframes can be found in Wireframes folder.
 
 ### Color Theme    
 ![Color Theme](./Wireframes/ColorTheme.png) 

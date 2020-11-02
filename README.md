@@ -11,7 +11,7 @@ This app deployed with [Surge](https://surge.sh/).
 
 Tandem Trivia URL: [http://tandem-trivia-llukkah.surge.sh/](http://tandem-trivia-llukkah.surge.sh/).     
 
-Steps to run code:     
+**Steps to run code:**     
 Clone down the repo.     
 <code>cd</code> into the directory folder.    
 Run <code>npm i</code> in command line to install dependencies.    

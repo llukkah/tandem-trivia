@@ -6,7 +6,7 @@ Take a break from your work day and test your knowledge on some trivia.
 This trivia game is made for the [Tandem 2020 Software Engineering Apprenticeship](https://madeintandem.com/about/apprenticeship-program/).      
 
 ### Getting Started
-This app created with [Create React App](https://github.com/facebook/create-react-app).
+This app created with [Create React App](https://github.com/facebook/create-react-app).     
 This app deployed with [Surge](https://surge.sh/). 
 
 Tandem Trivia URL: [http://tandem-trivia-llukkah.surge.sh/](http://tandem-trivia-llukkah.surge.sh/).     
